@@ -32,11 +32,13 @@ public class PlayerMove : MonoBehaviour
         //Moves Left and right along x Axis                               //Left/Right
         transform.Translate(Vector3.right * Time.deltaTime * Input.GetAxis("Horizontal") * speed);
 
+
+
         if (Input.GetButtonDown("Jump") && Mathf.Abs(rgb.velocity.y) < 0.001f)
 
             {
 
-                rgb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            rgb.AddForce(new Vector2(0, jumpForce)); //ForceMode2D.Impulse);
 
             }
 

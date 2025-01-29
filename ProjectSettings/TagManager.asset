@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - CleanUp
+  - Talk
   layers:
   - Default
   - TransparentFX

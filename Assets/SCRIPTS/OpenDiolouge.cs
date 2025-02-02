@@ -2,14 +2,14 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
-public class ContactDio: MonoBehaviour
+public class OpenDiolouge: MonoBehaviour
 {
-    //this is the TutorialTalk script but is prompted when the player touches another character
 
 
     public Text dialogueText;
-    public GameObject dialogueBox;
+    public GameObject Pannel;
 
     public string[] dialogueLines;
     
@@ -24,21 +24,10 @@ public class ContactDio: MonoBehaviour
 
     private void Start()
     {
-        dialogueBox.SetActive(false);
-
-    }
-
-
-    private void OnCollisionEnter(Collision collision)
-    {
-
-        if (collision.gameObject.CompareTag("Talk"))
-       
-        {
-            Debug.Log ("yep "); 
+        Pannel.SetActive(false);
+ 
             StartDialogue();
-            
-        }
+          
 
     }
     void Update()
@@ -64,7 +53,7 @@ public class ContactDio: MonoBehaviour
     {
         // this activateas the dialogue box and starts the first line
         // pressT.SetValue(true);
-        dialogueBox.SetActive(true);
+        Pannel.SetActive(true);
         dialogueActive = true;
         fullSprite.SetActive(true);
         currentLineIndex = 0;
@@ -84,7 +73,7 @@ public class ContactDio: MonoBehaviour
             EndDialogue();
         }
     }
-     
+
     IEnumerator TypeLine()
     {
         isTyping = true;
@@ -102,7 +91,7 @@ public class ContactDio: MonoBehaviour
 
     void EndDialogue()
     {
-        dialogueBox.SetActive(false);
+        Pannel.SetActive(false);
         dialogueActive = false;
         fullSprite.SetActive(false);
       

@@ -4,19 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class OpenDiolouge: MonoBehaviour
+public class TEXT: MonoBehaviour
 {
 
 
     public Text dialogueText;
-    public GameObject Pannel;
-
     public string[] dialogueLines;
-    
     public float textSpeed = 0.05f;
-    public GameObject fullSprite; //this helps the box dissapear (i oriiginally used it to switch sprites during diolouge scenes)
-
-
+    
 
     private int currentLineIndex = 0;
     private bool isTyping = false;
@@ -24,7 +19,7 @@ public class OpenDiolouge: MonoBehaviour
 
     private void Start()
     {
-        Pannel.SetActive(false);
+        
  
             StartDialogue();
           
@@ -36,7 +31,7 @@ public class OpenDiolouge: MonoBehaviour
         {
             if (isTyping)
             {
-                // If the player presses Space while text is typing this finishes the line instantly
+                // If the player presses F while text is typing this finishes the line instantly
                 StopAllCoroutines();
                 dialogueText.text = dialogueLines[currentLineIndex];
                 isTyping = false;
@@ -53,10 +48,9 @@ public class OpenDiolouge: MonoBehaviour
     {
         // this activateas the dialogue box and starts the first line
         // pressT.SetValue(true);
-        Pannel.SetActive(true);
+       
         dialogueActive = true;
-        fullSprite.SetActive(true);
-        currentLineIndex = 0;
+        currentLineIndex = 2;
         StartCoroutine(TypeLine());
     }
 
@@ -91,9 +85,9 @@ public class OpenDiolouge: MonoBehaviour
 
     void EndDialogue()
     {
-        Pannel.SetActive(false);
-        dialogueActive = false;
-        fullSprite.SetActive(false);
+
+        //dialogueActive = false;
+       
       
 
     }

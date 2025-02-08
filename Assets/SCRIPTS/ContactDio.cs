@@ -43,11 +43,11 @@ public class ContactDio: MonoBehaviour
     }
     void Update()
     {
-        if (dialogueActive && Input.GetKeyDown(KeyCode.F))
+        if (dialogueActive && Input.GetKeyDown(KeyCode.Space))
         {
             if (isTyping)
             {
-                // If the player presses F while text is typing this finishes the line instantly
+                // If the player presses Space while text is typing this finishes the line instantly
                 StopAllCoroutines();
                 dialogueText.text = dialogueLines[currentLineIndex];
                 isTyping = false;

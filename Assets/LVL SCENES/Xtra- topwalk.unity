@@ -1538,9 +1538,9 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
-  m_Mass: 0.85396516
-  m_LinearDrag: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 1
   m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -2433,7 +2433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9199126339048630721, guid: dd9a23f601a07c6408589ab1c69e277b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.7
+      value: -4.9
       objectReference: {fileID: 0}
     - target: {fileID: 9199126339048630721, guid: dd9a23f601a07c6408589ab1c69e277b, type: 3}
       propertyPath: m_LocalPosition.z

@@ -16,7 +16,7 @@ public class OpenDiolouge: MonoBehaviour
     public float textSpeed = 0.05f;
     public GameObject fullSprite; //this helps the box dissapear (i oriiginally used it to switch sprites during diolouge scenes)
 
-
+    public GameObject Choices; // really hoping this works (adding the choices to the end of the set of diolouge hoping to continue it from there.. it makes sence in my head- just go with it)
 
     private int currentLineIndex = 0;
     private bool isTyping = false;
@@ -27,8 +27,8 @@ public class OpenDiolouge: MonoBehaviour
         Pannel.SetActive(false);
  
             StartDialogue();
-          
 
+        Choices.SetActive(false);
     }
     void Update()
     {
@@ -94,7 +94,9 @@ public class OpenDiolouge: MonoBehaviour
         Pannel.SetActive(false);
         dialogueActive = false;
         fullSprite.SetActive(false);
-      
+
+      Choices.SetActive(true);
+
 
     }
 }

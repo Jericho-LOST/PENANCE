@@ -10,7 +10,7 @@ public class ChoiceDio : MonoBehaviour
             // i just need to make the text reapear too-
 
     public Text dialogueText;
-    public GameObject Pannel;
+  
 
     public string[] dialogueLines;
 
@@ -19,18 +19,18 @@ public class ChoiceDio : MonoBehaviour
 
     public GameObject Choices;
     public GameObject OtherChoicegobyebye; // i think this is pretty self-explanitory :)
-
+    public GameObject Pannel;
     private int currentLineIndex = 0;
     private bool isTyping = false;
     private bool dialogueActive = false;
+    private bool isChosen = false; // this should hopefully make the diolouge work when the option is hhosen 
 
     private void Start()
     {
         Pannel.SetActive(false);
-
-       // StartDialogue();
-
+  
         Choices.SetActive(false);
+
     }
     void Update()
     {
@@ -95,7 +95,7 @@ public class ChoiceDio : MonoBehaviour
 
     void EndDialogue()
     {
-        Pannel.SetActive(false);
+        Pannel.SetActive(true);
         dialogueActive = false;
         fullSprite.SetActive(false);
 

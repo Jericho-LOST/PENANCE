@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 public class ChoiceDio : MonoBehaviour
 {
-    //this version ony apears if a button is pressed 
+    //this version ony apears if a button is pressed  FAILED ATTEMPT 
             // i just need to make the text reapear too-
 
     public Text dialogueText;
@@ -23,7 +23,7 @@ public class ChoiceDio : MonoBehaviour
     private int currentLineIndex = 0;
     private bool isTyping = false;
     private bool dialogueActive = false;
-    private bool isChosen = false; // this should hopefully make the diolouge work when the option is hhosen 
+  //  private bool isChosen = false; // this should hopefully make the diolouge work when the option is hhosen 
 
     private void Start()
     {

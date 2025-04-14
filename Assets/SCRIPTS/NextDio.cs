@@ -16,13 +16,15 @@ public class NextDio : MonoBehaviour
     public string[] dialogueLines;
     public float textSpeed = 0.05f;
     public GameObject Choicesgobyebye; // i think this is pretty self-explanitory :)
+    public GameObject Chosen; // this is for the actiual button so it disapears when i want it to (merging the scripts makes the whole thing dissapear though..)
 
 
     private int currentLineIndex = 0;
     private bool isTyping = false;
     private bool dialogueActive = false;
 
-    public void SHOWOBJECT()     // puting it in caps so it can show up against the list of funtions in the button bit
+
+public void SHOWOBJECT()     // puting it in caps so it can show up against the list of funtions in the button bit
     {
         if (TalkPannel != null)
         {
@@ -102,7 +104,8 @@ public class NextDio : MonoBehaviour
     {
 
         dialogueActive = false;
-        Pannel.SetActive(true);
-
+        Pannel.SetActive(false);
+        TalkPannel.SetActive(false); // just realised i created two panels that do the same thing...
+        Chosen.SetActive (false);
     }
 }

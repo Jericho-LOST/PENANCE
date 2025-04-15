@@ -4,37 +4,40 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class ChoiceDio : MonoBehaviour
+public class NoChoiceDio : MonoBehaviour
 {
-    //this version ony apears if a button is pressed  FAILED ATTEMPT 
-            // i just need to make the text reapear too-
+   //litterally the same thing as my "Next Dio" script minus the choice disapearing thing. htis is for choices with one option 
 
-    public Text dialogueText;
-  
 
-    public string[] dialogueLines;
-
-    public float textSpeed = 0.05f;
-    public GameObject fullSprite; //this helps the box dissapear (i oriiginally used it to switch sprites during diolouge scenes)
-
-    public GameObject Choices;
-    public GameObject OtherChoicegobyebye; // i think this is pretty self-explanitory :)
+    public GameObject TalkPannel;
     public GameObject Pannel;
+    public Text dialogueText;
+    public string[] dialogueLines;
+    public float textSpeed = 0.05f;
+   // public GameObject Choicesgobyebye; // i think this is pretty self-explanitory :)
+    public GameObject Chosen; // this is for the actiual button so it disapears when i want it to (merging the scripts makes the whole thing dissapear though..)
+
+
     private int currentLineIndex = 0;
     private bool isTyping = false;
     private bool dialogueActive = false;
-  //  private bool isChosen = false; // this should hopefully make the diolouge work when the option is hhosen 
 
-    private void Start()
+
+public void SHOWOBJECT()     // puting it in caps so it can show up against the list of funtions in the button bit
     {
-        Pannel.SetActive(false);
-  
-        Choices.SetActive(false);
-
+        if (TalkPannel != null)
+        {
+            TalkPannel.SetActive(true);
+            StartDialogue();
+        }
     }
-    void Update()
+
+    private void Update()
     {
-        
+    //    if (TalkPannel == null)
+     //   {
+      //      StartDialogue();
+        //}
 
         if (dialogueActive && Input.GetKeyDown(KeyCode.Space))
         {
@@ -53,16 +56,19 @@ public class ChoiceDio : MonoBehaviour
         }
     }
 
+
     public void StartDialogue()
     {
         // this activateas the dialogue box and starts the first line
-        // pressT.SetValue(true);
+       // Choicesgobyebye.SetActive(false);
         Pannel.SetActive(true);
         dialogueActive = true;
-        fullSprite.SetActive(true);
+        //fullSprite.SetActive(true); //don't need this causefull pannel is already active//visable
         currentLineIndex = 0;
         StartCoroutine(TypeLine());
     }
+
+
 
     void NextLine()
     {
@@ -95,13 +101,10 @@ public class ChoiceDio : MonoBehaviour
 
     void EndDialogue()
     {
-        Pannel.SetActive(true);
+
         dialogueActive = false;
-        fullSprite.SetActive(false);
-
-        //Choices.SetActive(true); this will be saved for a second set of choices 
-
-
+        Pannel.SetActive(false);
+        TalkPannel.SetActive(false); // just realised i created two panels that do the same thing...
+        Chosen.SetActive (false);
     }
 }
-

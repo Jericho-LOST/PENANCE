@@ -23,6 +23,7 @@ public class NoChoiceDio : MonoBehaviour
     private bool dialogueActive = false;
 
 
+
 public void SHOWOBJECT()     // puting it in caps so it can show up against the list of funtions in the button bit
     {
         if (TalkPannel != null)

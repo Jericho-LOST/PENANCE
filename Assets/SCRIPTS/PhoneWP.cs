@@ -1,43 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PhoneWP : MonoBehaviour
 {
-    public List<Transform> waypoints;
-    public float moveSpeed = 3f;
+    [SerializeField] GameObject[] waypoints;
+    int currentWayPointIndex = 0;
 
-    private int currentWaypointIndex = 0;
-    private bool isMoving = false;
+    [SerializeField] float speed = 1f;
 
-    void Update()
-    {
-        if (isMoving && waypoints.Count > 0)
+    // i need to stop all movement before it happedns 
+
+    public void UPDOWN()
         {
-            MoveTowardsWaypoint();
-        }
-    }
-
-    void OnMouseDown() ///AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHHHH (kill me )
-    {
-        if (!isMoving && waypoints.Count > 0)
-        {
-            isMoving = true;
-        }
-    }
-
-    void MoveTowardsWaypoint()
-    {
-        Transform target = waypoints[currentWaypointIndex];
-        Vector3 direction = (target.position - transform.position).normalized;
-        float step = moveSpeed * Time.deltaTime;
-
-        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
-
-        if (Vector3.Distance(transform.position, target.position) < 0.1f)
-        {
-            currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Count;
-            // Optional: stop at last waypoint
-            // if (currentWaypointIndex == 0) isMoving = false;
-        }
+        transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWayPointIndex].transform.position, speed * Time.deltaTime);
     }
 }

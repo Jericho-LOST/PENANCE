@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 public class OpenDiolouge: MonoBehaviour
 {
-
+    //this is the diolouge script that opends on start
 
     public Text dialogueText;
     public GameObject Pannel;
@@ -97,6 +97,6 @@ public class OpenDiolouge: MonoBehaviour
 
       Choices.SetActive(true);
 
-
+        
     }
 }

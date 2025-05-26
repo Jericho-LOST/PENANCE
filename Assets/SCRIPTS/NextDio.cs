@@ -18,6 +18,7 @@ public class NextDio : MonoBehaviour
     public GameObject Choicesgobyebye; // i think this is pretty self-explanitory :)
     public GameObject Chosen; // this is for the actiual button so it disapears when i want it to (merging the scripts makes the whole thing dissapear though..)
 
+    public GameObject NewChoices;
 
     private int currentLineIndex = 0;
     private bool isTyping = false;
@@ -107,5 +108,6 @@ public void SHOWOBJECT()     // puting it in caps so it can show up against the 
         Pannel.SetActive(false);
         TalkPannel.SetActive(false); // just realised i created two panels that do the same thing...
         Chosen.SetActive (false);
+        NewChoices.SetActive (true);
     }
 }

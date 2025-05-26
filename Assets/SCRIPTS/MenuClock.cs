@@ -17,8 +17,8 @@ public class MenuClock : MonoBehaviour
     void UpdateClock()
     {
         DateTime now = DateTime.Now;
-        clockText.text = now.ToString("HH:mm"); // 24-hour format add :ss" for seconds
-    }
+        clockText.text = now.ToString("HH.mm"); // 24-hour format add :ss" for seconds
+    } //i litterally editied this ":" to make  it more aplicable to made up money 
 }
 
 

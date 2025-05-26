@@ -548,7 +548,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "to do:\n- button sounds \n- lighting fix \n- paralaxing \n- gif animation
-    and video input \n- choices//dio "
+    and video input \n- object interation (click or press x?)- door// comunicate
+    with others "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

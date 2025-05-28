@@ -4,42 +4,37 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class NoChoiceDio : MonoBehaviour
+public class TalkOnShow : MonoBehaviour
 {
-   //litterally the same thing as my "Next Dio" script minus the choice disapearing thing. htis is for choices with one option 
-
+    // this is the script that creates a diolouge whn propled by the last diolouge... i don't know how to explain it. 
+    //NO BUTTON NEEDED
+    //will go onto the next diolouge// button  
 
     public GameObject FullSprite;
+
+
     public GameObject Pannel;
     public Text dialogueText;
     public string[] dialogueLines;
     public float textSpeed = 0.05f;
-   // public GameObject Choicesgobyebye; // i think this is pretty self-explanitory :)
-    public GameObject Chosen; // this is for the actiual button so it disapears when i want it to (merging the scripts makes the whole thing dissapear though..)
+    public GameObject NewChoices;
 
 
     private int currentLineIndex = 0;
     private bool isTyping = false;
     private bool dialogueActive = false;
 
-
-
-public void SHOWOBJECT()     // puting it in caps so it can show up against the list of funtions in the button bit
+    void Start()
     {
-        if (FullSprite != null)
+        if (FullSprite != null) 
         {
-            FullSprite.SetActive(true);
             StartDialogue();
         }
     }
 
+    // Update is called once per frame
     private void Update()
     {
-    //    if (TalkPannel == null)
-     //   {
-      //      StartDialogue();
-        //}
-
         if (dialogueActive && Input.GetKeyDown(KeyCode.Space))
         {
             if (isTyping)
@@ -58,10 +53,11 @@ public void SHOWOBJECT()     // puting it in caps so it can show up against the 
     }
 
 
+
     public void StartDialogue()
     {
         // this activateas the dialogue box and starts the first line
-       // Choicesgobyebye.SetActive(false);
+        // Choicesgobyebye.SetActive(false);
         Pannel.SetActive(true);
         dialogueActive = true;
         //fullSprite.SetActive(true); //don't need this causefull pannel is already active//visable
@@ -106,6 +102,6 @@ public void SHOWOBJECT()     // puting it in caps so it can show up against the 
         dialogueActive = false;
         Pannel.SetActive(false);
         FullSprite.SetActive(false); // just realised i created two panels that do the same thing...
-        Chosen.SetActive (false);
+        NewChoices.SetActive(true);
     }
 }

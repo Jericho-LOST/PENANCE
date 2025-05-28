@@ -10,7 +10,7 @@ public class NextDio : MonoBehaviour
     // this can be used for any game object if attached to a button 
 
 
-    public GameObject TalkPannel;
+    public GameObject FullSprite;
     public GameObject Pannel;
     public Text dialogueText;
     public string[] dialogueLines;
@@ -27,9 +27,9 @@ public class NextDio : MonoBehaviour
 
 public void SHOWOBJECT()     // puting it in caps so it can show up against the list of funtions in the button bit
     {
-        if (TalkPannel != null)
+        if (FullSprite != null)
         {
-            TalkPannel.SetActive(true);
+            FullSprite.SetActive(true);
             StartDialogue();
         }
     }
@@ -106,7 +106,7 @@ public void SHOWOBJECT()     // puting it in caps so it can show up against the 
 
         dialogueActive = false;
         Pannel.SetActive(false);
-        TalkPannel.SetActive(false); // just realised i created two panels that do the same thing...
+        FullSprite.SetActive(false); // just realised i created two panels that do the same thing...
         Chosen.SetActive (false);
         NewChoices.SetActive (true);
     }

@@ -176,7 +176,7 @@ MonoBehaviour:
   dialogueLines:
   - Congrats!
   - You're dead.
-  textSpeed: 0.06
+  textSpeed: 0.05
   fullSprite: {fileID: 10391614}
   Choices: {fileID: 1830207886}
 --- !u!1 &140503089
@@ -1032,7 +1032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf896b8874ad09440b64c4a95853e58a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FullSprite: {fileID: 0}
+  FullSprite: {fileID: 1073842028}
   Pannel: {fileID: 140503089}
   dialogueText: {fileID: 2139568782}
   dialogueLines:
@@ -3519,7 +3519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf896b8874ad09440b64c4a95853e58a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FullSprite: {fileID: 0}
+  FullSprite: {fileID: 326385858}
   Pannel: {fileID: 1992151412}
   dialogueText: {fileID: 1354146644}
   dialogueLines:
@@ -4852,6 +4852,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1333118191}
+  - {fileID: 2000759760}
   - {fileID: 1567535020}
   - {fileID: 238275333}
-  - {fileID: 2000759760}

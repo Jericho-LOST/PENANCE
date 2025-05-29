@@ -22,10 +22,10 @@ public class OpenDiolouge: MonoBehaviour
     private bool isTyping = false;
     private bool dialogueActive = false;
 
-    private void Start()
+     void Start()
     {
-        Pannel.SetActive(false);
- 
+        /// Pannel.SetActive(false);
+        Debug.Log("working ");
             StartDialogue();
 
         Choices.SetActive(false);
@@ -52,10 +52,10 @@ public class OpenDiolouge: MonoBehaviour
     public void StartDialogue()
     {
         // this activateas the dialogue box and starts the first line
-        // pressT.SetValue(true);
+ fullSprite.SetActive(true);
         Pannel.SetActive(true);
         dialogueActive = true;
-        fullSprite.SetActive(true);
+       
         currentLineIndex = 0;
         StartCoroutine(TypeLine());
     }
